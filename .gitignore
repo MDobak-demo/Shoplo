@@ -45,11 +45,6 @@
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
 
-### Symfony Patch ###
-/web/css/
-/web/js/
-
-
 ### Node ###
 # Logs
 logs
