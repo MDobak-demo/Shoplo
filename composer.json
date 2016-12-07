@@ -32,7 +32,8 @@
         "league/tactician-bundle": "~0.4",
         "knplabs/knp-paginator-bundle": "^2.5",
         "ramsey/uuid": "^3.4",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "doctrine/doctrine-migrations-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
