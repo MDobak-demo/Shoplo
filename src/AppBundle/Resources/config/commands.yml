@@ -1,0 +1,14 @@
+services:
+    app.user.command.register_user_handler:
+        class: AppBundle\User\Command\RegisterUserHandler
+        arguments:
+            - '@app.repository.user'
+        tags:
+            - { name: tactician.handler, command: AppBundle\User\Command\RegisterUserCommand }
+
+    app.user.command.add_product_handler:
+        class: AppBundle\Product\Command\AddProductHandler
+        arguments:
+            - '@app.repository.product'
+        tags:
+            - { name: tactician.handler, command: AppBundle\Product\Command\AddProductCommand }

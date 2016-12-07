@@ -1,0 +1,27 @@
+services:
+    app.repository.user:
+        class: AppBundle\Repository\UserRepository
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@app.doctrine.repository.user"
+
+    app.doctrine.repository.user:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - AppBundle\User\Model\User
+        private: true
+
+    app.repository.product:
+        class: AppBundle\Repository\ProductRepository
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@app.doctrine.repository.product"
+            - "@app.paginator"
+
+    app.doctrine.repository.product:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - AppBundle\Product\Model\Product
+        private: true

@@ -1,0 +1,15 @@
+services:
+    app.user.event_listener.register:
+        class: AppBundle\User\EventListener\RegisterUserEventListener
+        arguments:
+            - "@security.password_encoder"
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+
+    app.product.event_listener.register:
+        class: AppBundle\Product\EventListener\SendEmailEventListener
+        arguments:
+            - "@app.mailer.product_mailer"
+        tags:
+            - { name: doctrine.event_listener, event: postPersist }

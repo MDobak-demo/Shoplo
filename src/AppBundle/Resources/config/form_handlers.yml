@@ -1,0 +1,10 @@
+services:
+    app.form_handler.user.register:
+        class: AppBundle\Form\Handler\RegisterFormHandler
+        arguments:
+            - "@tactician.commandbus.default"
+
+    app.form_handler.product.add_product:
+        class: AppBundle\Form\Handler\AddProductFormHandler
+        arguments:
+            - "@tactician.commandbus.default"

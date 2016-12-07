@@ -1,0 +1,16 @@
+{
+  "name": "shoplo-shop",
+  "version": "0.1.0",
+  "description": "",
+  "main": "web/js/main.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.0.0",
+    "bootstrap": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify": "0.0.14"
+  }
+}

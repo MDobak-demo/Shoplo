@@ -1,0 +1,11 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <ul>
+        {% for product in products.items %}
+            <li><a href="{{ path("app_product", {id: product.id}) }}">{{ product.name }}</a> <span class="label label-primary">{{ product.price.format(app.request.locale) }}</span></li>
+        {% endfor %}
+    </ul>
+
+    {{ knp_pagination_render(products.knpPagination) }}
+{% endblock %}

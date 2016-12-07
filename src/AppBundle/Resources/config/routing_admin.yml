@@ -1,0 +1,7 @@
+app_admin_home:
+    path:      /
+    defaults:  { _controller: AppBundle:Admin/Home:index }
+
+app_admin_new_product:
+    path:      /new-product
+    defaults:  { _controller: AppBundle:Admin/Product:new }

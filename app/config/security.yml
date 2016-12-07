@@ -1,0 +1,29 @@
+security:
+    providers:
+        app_user:
+            entity:
+                class: User:User
+                property: email
+
+    encoders:
+        AppBundle\User\Model\User:
+            algorithm: bcrypt
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            form_login:
+                login_path: app_login
+                check_path: app_login
+
+            logout:
+                path:   app_logout
+                target: app_home
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_USER }

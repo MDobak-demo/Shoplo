@@ -1,0 +1,12 @@
+services:
+    app.paginator:
+        class: AppBundle\Pagination\KnpPaginator
+        arguments:
+            - "@knp_paginator"
+
+    app.mailer.product_mailer:
+        class: AppBundle\Mailer\ProductMailer
+        arguments:
+            - "@swiftmailer.mailer"
+            - "@twig"
+            - "%notification_email%"
